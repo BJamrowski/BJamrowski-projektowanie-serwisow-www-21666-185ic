@@ -5,10 +5,10 @@ Strona jest projektem na laoratorium nr 1. Projwekt sklada sie z 1 strony glowne
 oraz 3 podstron. Podstrony zostaly zrealizowane zgodnie z poszczegolnymi zalozeniami.
 
 Na glownej stronie zajduje sie tworca strony wraz z indeksem.
-![Strona glowna](index.png "Tak prezentuje sie strona glowna.")
+![Strona glowna](stronaProjekt/index.png "Tak prezentuje sie strona glowna.")
 Na podstronie *List* znajduje sie tekst sformatowany w stylu klasycznego listu.
-![List](list.png "Oto wyglad listu.")
+![List](stronaProjekt/list.png "Oto wyglad listu.")
 Kolejna zostala sformatowana w stylu podrecznika.
-![Podrecznik](podrecznik.png "Tutja widzimy przykladoa strone z podrecznika.")
+![Podrecznik](stronaProjekt/podrecznik.png "Tutja widzimy przykladoa strone z podrecznika.")
 Na ostatniej podstronie umieszczony zostal prosty formularz.
-![Formularz](formularz.png "Przyklad prostego formularza.")
+![Formularz](stronaProjekt/formularz.png "Przyklad prostego formularza.")
