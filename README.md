@@ -1,14 +1,23 @@
-# BJamrowski-projektowanie-serwisow-www-21666-185ic
-Repozytorium przedmiotu Projektowanie stron WWW
+#BJamrowski-projektowanie-serwisow-www-21666-185ic
+##Repozytorium przedmiotu Projektowanie stron WWW
 
-Strona jest projektem na laoratorium nr 1. Projwekt sklada sie z 1 strony glownej
-oraz 3 podstron. Podstrony zostaly zrealizowane zgodnie z poszczegolnymi zalozeniami.
+Strona ta powstala jako zadanie do laboratorium nr 2.
 
-Na glownej stronie zajduje sie tworca strony wraz z indeksem.
-![Strona glowna](stronaProjekt/index.png "Tak prezentuje sie strona glowna.")
-Na podstronie *List* znajduje sie tekst sformatowany w stylu klasycznego listu.
-![List](stronaProjekt/list.png "Oto wyglad listu.")
-Kolejna zostala sformatowana w stylu podrecznika.
-![Podrecznik](stronaProjekt/podrecznik.png "Tutja widzimy przykladoa strone z podrecznika.")
-Na ostatniej podstronie umieszczony zostal prosty formularz.
-![Formularz](stronaProjekt/formularz.png "Przyklad prostego formularza.")
+Najwazniejsze cechy:
+```
+1.przycisk zmienia kolory po kliknięciu
+2.żarówka obraca się po najechaniu
+3.żarówka wraca do pozycji wyjściowej po odjechaniu
+4.zmiana rozmiaru tekstu
+5.zmiana fontu tesktu
+6.zmiana koloru tekstu
+7.zmiana grubości tekstu
+8.wyświetlenie napisu po kliknięciu przycisku
+9.czyszczenie powstałych napisów
+10.po wciśnięciu przycisku pojawia się pytanie
+11.po wciśnięciu przycisku pojawia się odpowiedź
+12.przycisk chowający menu
+13.zmiana tła strony
+14.zegar
+15.karta w 3D
+```
