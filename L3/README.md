@@ -17,10 +17,10 @@ Projekt zakladal stworzenie strony, ktora obsluguje 10 wybranych zdarzen. Te zda
 ```
 
 Poczatkowy wyglad strony:
-[Poczatkowa strona](./screens/site.png)
+![Poczatkowa strona](./screens/site.png)
 
 Zmodyfikowana strona:
-[Zmodyfikowana strona](./screens/modificated.png)
+![Zmodyfikowana strona](./screens/modificated.png)
 
 Wyniki kolejnych zadan z JS:
-[Wyniki](./screens/zadania.png)
+![Wyniki](./screens/zadania.png)
