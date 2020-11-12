@@ -1,5 +1,5 @@
-#BJamrowski-projektowanie-serwisow-www-21666-185ic
-##Repozytorium przedmiotu Projektowanie stron WWW
+# BJamrowski-projektowanie-serwisow-www-21666-185ic
+## Repozytorium przedmiotu Projektowanie stron WWW
 
 Strona ta powstala jako zadanie do laboratorium nr 3.
 Projekt zakladal stworzenie strony, ktora obsluguje 10 wybranych zdarzen. Te zdarzenia to:
