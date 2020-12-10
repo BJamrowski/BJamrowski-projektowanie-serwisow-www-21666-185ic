@@ -1,70 +1,105 @@
-# Getting Started with Create React App
+# BJamrowski-projektowanie-serwisow-www-21666-185ic
+## Repozytorium przedmiotu Projektowanie stron WWW
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Projekt ten zawiera zadania zrealizowane z Reactem do lab nr 6.
 
-## Available Scripts
+React to bardzo przydatne narzedzie. Wykorzystuje on JSX co pozwala na wykorzystywanie
+znacznikow HTML wewnatrz skryptow JS. React wykorzystuje komponenty klasowe oraz
+funckyjne. Sa one do sibie podobne, jednak pierwszy to klasa natomiast drugi to
+funkcja. Funkcje przyjmuja jako argument props, czyli wlasciwosci, ktorymi moga byc atrybuty
+jak i metody.
+Ponizej przedstawione sa komponenty klasowe oraz funkcyjne zastosowane w projekcie.
+```
+class Clock extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {date: new Date()};
+  }
 
-In the project directory, you can run:
+  componentDidMount() {
+    this.timerID = setInterval(
+      () => this.tick(),
+      1000
+    );
+  }
 
-### `npm start`
+  componentWillUnmount() {
+    clearInterval(this.timerID);
+  }
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+  tick() {
+    this.setState({
+      date: new Date()
+    });
+  }
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+  render() {
+    return (
+      <div>
+        <h1>Witaj, świecie!</h1>
+        <h2>Aktualny czas: {this.state.date.toLocaleTimeString()}.</h2>
+      </div>
+    );
+  }
+}
 
-### `npm test`
+function Welcome(props) {
+  return <h1>Cześć, {props.name}</h1>;
+}
+```
+Komponenty funkcyjne moga wykorzystywac stan. Jest on podobny do props
+z tym, ze jest prywatny i w pelni kontrolowany przez komponent.
+Wykorzystanie stanu w laboratorium.
+```
+class Clock extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {date: new Date()};
+  }
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+  componentDidMount() {
+    this.timerID = setInterval(
+      () => this.tick(),
+      1000
+    );
+  }
 
-### `npm run build`
+  componentWillUnmount() {
+    clearInterval(this.timerID);
+  }
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+  tick() {
+    this.setState({
+      date: new Date()
+    });
+  }
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+  render() {
+    return (
+      <div>
+        <h1>Witaj, świecie!</h1>
+        <h2>Aktualny czas: {this.state.date.toLocaleTimeString()}.</h2>
+      </div>
+    );
+  }
+}
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Podczas laboratorium wykorzystala funckja map(). Pozwala ona wykonanie dzialan
+na tablicy. Wewnatrz niej mozna uzyc klucza co pozwoli nam jednoznacznie 
+odroznic wykorzystane elementy.
+Zastosowanie funckji map do generowania elementow.
+```
+function App() {
+  const elements = [<div><Clock/></div>,<div><Welcome name="Enchanded" /></div>];
+  return (
+    <ul>
+      {elements.map(item => <li key = {item.id}>{item}</li>)}
+    </ul>
+  );
+}
+```
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Efekt koncowy.
+![Widok strony](./photos/end.png)
