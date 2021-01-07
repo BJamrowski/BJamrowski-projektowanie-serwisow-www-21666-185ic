@@ -5,10 +5,11 @@ import PropTypes from 'prop-types';
 const Bar = ({ labelData, bmiData }) => {
   const data = canvas => {
     const ctx = canvas.getContext('2d');
-    const gradient = ctx.createLinearGradient(63, 81, 181, 700);
-    gradient.addColorStop(0, '#929dd9');
-    gradient.addColorStop(1, '#172b4d');
+    const gradient = ctx.createLinearGradient(100, 100, 100, 700);
+    gradient.addColorStop(0, '#500E0E');
+    gradient.addColorStop(1, '#000');
 
+    // wyswietlenie wykresu
     return {
       labels: labelData,
       datasets: [
@@ -16,7 +17,7 @@ const Bar = ({ labelData, bmiData }) => {
           label: 'BMI',
           data: bmiData,
           backgroundColor: gradient,
-          borderColor: '#3F51B5',
+          borderColor: '#FFF',
           pointRadius: 6,
           pointHoverRadius: 8,
           pointHoverBorderColor: 'white',
@@ -26,6 +27,7 @@ const Bar = ({ labelData, bmiData }) => {
     };
   };
 
+  // wyswietlanie osi wykresu
   const options = {
     responsive: true,
     scales: {
@@ -33,8 +35,8 @@ const Bar = ({ labelData, bmiData }) => {
         {
           scaleLabel: {
             display: true,
-            labelString: 'Date',
-            fontSize: 18,
+            labelString: 'Data',
+            fontSize: 20,
             fontColor: 'white'
           },
           gridLines: {
@@ -52,11 +54,11 @@ const Bar = ({ labelData, bmiData }) => {
           scaleLabel: {
             display: true,
             labelString: 'BMI',
-            fontSize: 18,
+            fontSize: 20,
             fontColor: 'white'
           },
           gridLines: {
-            display: false,
+            display: true,
             color: 'white'
           },
           ticks: {

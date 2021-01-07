@@ -1,11 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+// stworzenie pojedynczcego wpisu danych BMI
 const Info = ({ weight, height, id, date, bmi, deleteCard }) => {
   const handleDelete = () => {
     deleteCard(id);
   };
 
+  // wyswietlanie wpisow
   return (
     <div className="col m6 s12">
       <div className="card">
@@ -14,13 +16,13 @@ const Info = ({ weight, height, id, date, bmi, deleteCard }) => {
             BMI: {bmi}
           </span>
           <div className="card-data">
-            <span data-test="weight">Weight: {weight} kg</span>
-            <span data-test="height">Height: {height} cm</span>
-            <span data-test="date">Date: {date}</span>
+            <span data-test="weight">Waga: {weight} kg</span>
+            <span data-test="height">Wzrost: {height} cm</span>
+            <span data-test="date">Data: {date}</span>
           </div>
 
           <button className="delete-btn" onClick={handleDelete}>
-            X
+            Zamknij
           </button>
         </div>
       </div>

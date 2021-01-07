@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import '../App/App.css';
 
+// wartosci domyslne
 const initialValues = {
 	weight: '',
 	height: '',
@@ -9,8 +10,10 @@ const initialValues = {
 }
 
 const BmiForm = ({ change }) => {
+	// stworzenie wartosci poczatkowych
 	const [state, setState] = useState(initialValues);
 
+	// zmiana danych na zadane wartosci
 	const handleChange = e => {
 		let { value, name } = e.target;
 		if (value > 999) {
@@ -24,16 +27,18 @@ const BmiForm = ({ change }) => {
 		});
 	};
 
+	// zapamietanie wartosci danych
 	const handleSubmit = () => {
 		change(state);
 		setState(initialValues);
 	};
 
+	// ponizej widniej struktora wprowadzania oraz podsumowywania danych
 	return (
 		<>
 			<div className="row">
 				<div className="col m6 s12">
-					<label htmlFor="weight">Weight (in kg)</label>
+					<label htmlFor="weight">Waga (w kg)</label>
 					<input
 						id="weight"
 						name="weight"
@@ -47,14 +52,14 @@ const BmiForm = ({ change }) => {
 				</div>
 
 				<div className="col m6 s12">
-					<label htmlFor="height">Height (in cm)</label>
+					<label htmlFor="height">Wzrost (w cm)</label>
 					<input
 						id="height"
 						name="height"
 						type="number"
 						min="1"
 						max="999"
-						placeholder="176"
+						placeholder="180"
 						value={state.height}
 						onChange={handleChange}
 					/>
@@ -68,7 +73,7 @@ const BmiForm = ({ change }) => {
 					disabled={state.weight === '' || state.height === ''}
 					onClick={handleSubmit}
 				>
-					Calculate BMI
+					Oblicz BMI
 				</button>
 			</div>
 		</>

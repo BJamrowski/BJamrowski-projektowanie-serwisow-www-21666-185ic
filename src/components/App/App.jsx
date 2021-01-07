@@ -8,10 +8,12 @@ import Bar from '../Bar/Bar';
 import { getData, storeData } from '../../helpers/localStorage';
 
 const App = () => {
+  // ustawienie aktualnej daty
   const initialState = () => getData('data') || [];
   const [state, setState] = useState(initialState);
   const [data, setData] = useState({});
 
+  // 
   useEffect(() => {
     storeData('data', state);
     const date = state.map(obj => obj.date);
@@ -30,6 +32,7 @@ const App = () => {
     setState(newVal);
   };
 
+  // usuwanie wpisu
   const handleDelete = id => {
     storeData('lastState', state);
     let newState = state.filter(i => {
@@ -38,14 +41,16 @@ const App = () => {
     setState(newState);
   };
 
+  // cofniecie usuniecia wpisu
   const handleUndo = () => {
     setState(getData('lastState'));
   };
 
+  // wyswietlenie wszystkich elemntow aplikacji
   return (
     <div className='container'>
       <div className='row center'>
-        <h1 className='white-text'> BMI Tracker </h1>
+        <h1 className='white-text'> Aplikacja śledzenia BMI </h1>
       </div>
       <div className='row'>
         <div className='col m12 s12'>
@@ -53,7 +58,7 @@ const App = () => {
           <Bar labelData={data.date} bmiData={data.bmi} />
           <div>
             <div className='row center'>
-              <h4 className='white-text'>7 Day Data</h4>
+              <h4 className='white-text'>Dane ostatnich 7 dni</h4>
             </div>
             <div className='data-container row'>
               {state.length > 0 ? (
@@ -71,14 +76,14 @@ const App = () => {
                   ))}
                 </>
               ) : (
-                  <div className='center white-text'>No log found</div>
+                  <div className='center white-text'>Brak danych</div>
                 )}
             </div>
           </div>
           {getData('lastState') !== null ? (
             <div className='center'>
               <button className='calculate-btn' onClick={handleUndo}>
-                Undo
+                Cofnij
               </button>
             </div>
           ) : (
